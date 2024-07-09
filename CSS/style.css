@@ -26,10 +26,11 @@
   border: 1px solid black;
   margin: 10px;
   display: flex;
+  flex-direction: column;
 }
 div.grid-cell {
   height: 30px;
-  width: 30px;
+  width: 6.25%;
   /* to remove the border after the board is ready */
   border: 1px solid black;
   /* to remove the border after the board is ready */
