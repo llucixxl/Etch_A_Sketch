@@ -5,7 +5,7 @@
 const gridContainer = document.querySelector("#grid-container");
 const gridCell = document.createElement("div");
 
-gridCell.setAttribute(
+const styledGridCell = gridCell.setAttribute(
   "style",
   "height: 30px; width: 6.25%; border: 1px solid red;"
 );
