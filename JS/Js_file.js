@@ -12,10 +12,9 @@ gridCell.setAttribute(
 );
 
 // Function to auto-generate the grid board
+let gridNumber = 16;
 
 (function () {
-  let gridNumber = 16;
-
   for (let i = 0; i < gridNumber; ++i) {
     arrayOfGridContainers.forEach((container) => {
       container.appendChild(gridCell.cloneNode(true));
