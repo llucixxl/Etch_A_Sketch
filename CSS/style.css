@@ -1,1 +1,16 @@
 /* Initial file for initial commit */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.title-container {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.title-container span {
+  border: 3px solid blue;
+  padding: 10px;
+}
