@@ -10,18 +10,27 @@
   margin-bottom: 40px;
 }
 .title-container span {
-  border: 3px solid blue;
+  border: 2px solid blue;
+  border-radius: 25px;
   padding: 10px;
+  font-family: sans-serif;
+}
+.grid-board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .grid-container {
+  width: 480px;
+  height: 480px;
   border: 1px solid black;
   margin: 10px;
   display: flex;
-  flex-grow: 1;
-  height: 100vh;
 }
 div.grid-cell {
-  height: 72.6875px;
-  width: 72.6875px;
+  height: 30px;
+  width: 30px;
+  /* to remove the border after the board is ready */
   border: 1px solid black;
+  /* to remove the border after the board is ready */
 }
