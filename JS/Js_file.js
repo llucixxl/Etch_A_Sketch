@@ -6,18 +6,21 @@ const wrapGridContainers = document.querySelector("#wrap-grid-containers");
 
 // Generate grid cells
 
-let gridCellsCount = 256;
+let gridCellsCount = 100 / 15;
+let newGridCount = 100 / `${gridCellsCount}`;
 
-for (let i = 0; i < gridCellsCount; i++) {
-  const wrapGridContainers = document.querySelector("#wrap-grid-containers");
-  const gridCell = document.createElement("div");
+for (let i = 0; i < newGridCount; i++) {
+  const cellBoardContainer = document.createElement("div");
+  cellBoardContainer.setAttribute("id", "#wrap-grid-cell");
+  cellBoardContainer.setAttribute("style", "display: flex;");
 
-  gridCell.setAttribute("id", "grid-cell");
-  gridCell.setAttribute(
-    "style",
-    "height: 30px; width: 6.25%; border: 1px solid black;"
-  );
-  wrapGridContainers.appendChild(gridCell);
+  for (let j = 0; j < newGridCount; j++) {
+    const gridCell = document.createElement("div");
+    gridCell.setAttribute("id", "#grid-cell");
+    gridCell.setAttribute("style", "border: 1px solid black;  flex-grow: 1;");
+    cellBoardContainer.appendChild(gridCell);
+  }
+  wrapGridContainers.appendChild(cellBoardContainer);
 }
 
 // End of generate grid cells
