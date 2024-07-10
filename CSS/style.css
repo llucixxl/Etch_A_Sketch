@@ -25,10 +25,9 @@ div.wrap-grid-containers {
   margin: 10px;
   width: 480px;
   height: 480px;
-}
-div.grid-container {
-  width: 100%;
   display: flex;
+  /* flex-direction: column;   */
+  flex-wrap: wrap;
 }
 div.grid-cell {
   height: 30px;
