@@ -1,25 +1,25 @@
 // Initial file for the initial commit
 
-// References to container and gridCell creation
+// References to container for gridCell creation
 
-const gridContainer = document.querySelectorAll("#grid-container");
-const arrayOfGridContainers = Array.from(gridContainer);
-const gridCell = document.createElement("div");
+const wrapGridContainers = document.querySelector("#wrap-grid-containers");
 
-gridCell.setAttribute(
-  "style",
-  "height: 30px; width: 6.25%; border: 1px solid red;"
-);
+// Generate grid cells
 
-// Function to auto-generate the grid board
-let gridNumber = 16;
+let gridCellsCount = 256;
 
-(function () {
-  for (let i = 0; i < gridNumber; ++i) {
-    arrayOfGridContainers.forEach((container) => {
-      container.appendChild(gridCell.cloneNode(true));
-    });
-  }
-})();
+for (let i = 0; i < gridCellsCount; i++) {
+  const wrapGridContainers = document.querySelector("#wrap-grid-containers");
+  const gridCell = document.createElement("div");
+
+  gridCell.setAttribute("id", "grid-cell");
+  gridCell.setAttribute(
+    "style",
+    "height: 30px; width: 6.25%; border: 1px solid black;"
+  );
+  wrapGridContainers.appendChild(gridCell);
+}
+
+// End of generate grid cells
 
 // End of the auto-generate grid board function
