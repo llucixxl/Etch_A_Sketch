@@ -6,7 +6,7 @@ const wrapGridContainers = document.querySelector("#wrap-grid-containers");
 
 // Generate grid cells
 
-let gridCellsCount = 50;
+let gridCellsCount = 20;
 let templateSize = 480;
 let gridCellSize = templateSize / gridCellsCount;
 
