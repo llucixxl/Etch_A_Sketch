@@ -6,27 +6,23 @@ const wrapGridContainers = document.querySelector("#wrap-grid-containers");
 
 // Generate grid cells
 
-let gridCellsCount = 100 / 5;
-let newGridCount = 100 / `${gridCellsCount}`;
+let gridCellsCount = 50;
+let templateSize = 480;
+let gridCellSize = templateSize / gridCellsCount;
 
-for (let i = 0; i < newGridCount; i++) {
-  const cellBoardContainer = document.createElement("div");
-  cellBoardContainer.setAttribute("id", "#wrap-grid-cell");
-  cellBoardContainer.setAttribute(
-    "style",
-    "display: flex; border: 1px solid black; flex-wrap: wrap; flex-grow: 1;"
-  );
+for (let i = 0; i < gridCellsCount; i++) {
+  const cellBoardRow = document.createElement("div");
+  cellBoardRow.setAttribute("style", "display: flex;");
+  cellBoardRow.style.height = `${gridCellSize}px`;
 
-  for (let j = 0; j < newGridCount; j++) {
+  for (let j = 0; j < gridCellsCount; j++) {
     const gridCell = document.createElement("div");
-    gridCell.setAttribute("id", "#grid-cell");
-    gridCell.setAttribute(
-      "style",
-      "height: 10%; width: 10%; border: 1px solid black;  flex-grow: 1;"
-    );
-    cellBoardContainer.appendChild(gridCell);
+    gridCell.classList.add("grid-cell");
+    gridCell.style.width = `${gridCellSize}px`;
+    cellBoardRow.appendChild(gridCell);
   }
-  wrapGridContainers.appendChild(cellBoardContainer);
+
+  wrapGridContainers.appendChild(cellBoardRow);
 }
 
 // End of generate grid cells
