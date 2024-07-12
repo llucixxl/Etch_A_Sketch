@@ -31,10 +31,8 @@ div.wrap-grid-containers {
   /* justify-content: flex-end; */
 }
 div.grid-cell {
-  height: 30px;
-  width: 6.25%;
   /* to remove the border after the board is ready */
-  border: 1px solid black;
+
   border: 1px solid black;
   background-color: lightgray; /*  background color /
   / to remove the border after the board is ready */
