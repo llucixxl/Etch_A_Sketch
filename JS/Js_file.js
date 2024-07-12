@@ -6,7 +6,7 @@ const wrapGridContainers = document.querySelector("#wrap-grid-containers");
 
 // Generate grid cells
 
-let gridCellsCount = 100 / 4;
+let gridCellsCount = 100 / 5;
 let newGridCount = 100 / `${gridCellsCount}`;
 
 for (let i = 0; i < newGridCount; i++) {
@@ -14,13 +14,16 @@ for (let i = 0; i < newGridCount; i++) {
   cellBoardContainer.setAttribute("id", "#wrap-grid-cell");
   cellBoardContainer.setAttribute(
     "style",
-    "display: flex; flex-wrap: wrap; flex-grow: 1;"
+    "display: flex; border: 1px solid black; flex-wrap: wrap; flex-grow: 1;"
   );
 
   for (let j = 0; j < newGridCount; j++) {
     const gridCell = document.createElement("div");
     gridCell.setAttribute("id", "#grid-cell");
-    gridCell.setAttribute("style", "border: 1px solid black;  flex-grow: 1;");
+    gridCell.setAttribute(
+      "style",
+      "height: 10%; width: 10%; border: 1px solid black;  flex-grow: 1;"
+    );
     cellBoardContainer.appendChild(gridCell);
   }
   wrapGridContainers.appendChild(cellBoardContainer);
