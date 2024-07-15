@@ -24,7 +24,7 @@ div.wrap-grid-containers {
   border: 1px solid black;
   margin: 10px;
   width: 480px;
-  height: 480px;
+  /* height: 480px; */
   /* display: flex; */
   /* flex-direction: column; */
   /* flex-wrap: wrap; */
@@ -34,7 +34,12 @@ div.grid-cell {
   /* to remove the border after the board is ready */
 
   border: 1px solid black;
-  background-color: lightgray; /*  background color /
+  background-color: rgba(
+    221,
+    208,
+    208,
+    0.61
+  ); /*  background color /
   / to remove the border after the board is ready */
   /* to remove the border after the board is ready */
 }
