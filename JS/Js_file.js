@@ -26,3 +26,16 @@ for (let i = 0; i < gridCellsCount; i++) {
 }
 
 // End of generate grid cells
+
+// Add hover effect for the grid cells
+
+let colorGridCells = document.querySelectorAll(".grid-cell");
+
+console.log(typeof colorGridCells);
+
+let arrayOfCells = Array.from(colorGridCells);
+
+wrapGridContainers.addEventListener("mouseover", (event) => {
+  let cellColor = event.target;
+  cellColor.style.backgroundColor = "blue";
+});
