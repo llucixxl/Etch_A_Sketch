@@ -29,7 +29,7 @@ for (let i = 0; i < gridCellsCount; i++) {
 
 // Add hover effect for the grid cells
 
-let colorGridCells = document.querySelectorAll(".grid-cell");
+let colorGridCells = document.querySelector(".grid-cell");
 
 console.log(typeof colorGridCells);
 
