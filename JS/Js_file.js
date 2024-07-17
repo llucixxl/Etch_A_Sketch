@@ -31,5 +31,7 @@ for (let i = 0; i < gridCellsCount; i++) {
 
 wrapGridContainers.addEventListener("mouseover", (event) => {
   let cellColor = event.target.closest(".grid-cell");
-  cellColor.style.backgroundColor = "blue";
+  if (cellColor) {
+    cellColor.style.backgroundColor = "blue";
+  }
 });
