@@ -9,11 +9,15 @@
   margin-top: 20px;
   margin-bottom: 40px;
 }
-.title-container span {
+/* .title-container span {
   border: 2px solid blue;
   border-radius: 25px;
   padding: 10px;
   font-family: sans-serif;
+} */
+
+.button-grid-size {
+  font-size: 1em;
 }
 .grid-board {
   display: flex;
@@ -23,7 +27,7 @@
 div.wrap-grid-containers {
   border: 1px solid black;
   margin: 10px;
-  width: 480px;
+  /* width: 480px; */
   /* height: 480px; */
   /* display: flex; */
   /* flex-direction: column; */
