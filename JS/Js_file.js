@@ -35,3 +35,24 @@ wrapGridContainers.addEventListener("mouseover", (event) => {
     cellColor.style.backgroundColor = "blue";
   }
 });
+
+//  End of add hover effect for the grid cells
+
+// Add number of grid cells by user prompt input
+
+const buttonGridSize = document.querySelector("#set-grid-size");
+
+let numberOfCells;
+
+buttonGridSize.addEventListener("click", (event) => {
+  do {
+    numberOfCells = prompt("The number of cells must be between 1 and 100!");
+
+    if (numberOfCells === null) {
+      break;
+    }
+
+    numberOfCells = +numberOfCells;
+    console.log(numberOfCells);
+  } while (numberOfCells < 1 || numberOfCells > 100 || isNaN(numberOfCells));
+});
