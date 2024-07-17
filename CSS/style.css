@@ -17,7 +17,11 @@
 } */
 
 .button-grid-size {
-  font-size: 1em;
+  font-size: 1.2rem;
+  padding: 0.4em;
+  border-radius: 20px;
+  background-color: purple;
+  color: antiquewhite;
 }
 .grid-board {
   display: flex;
