@@ -4,28 +4,65 @@
 
 const wrapGridContainers = document.querySelector("#wrap-grid-containers");
 
-// Generate grid cells
+// Generate initial grid cells panel
 
-let gridCellsCount = 16;
+let boardCells = 16;
 let templateSize = 480;
-let gridCellSize = templateSize / gridCellsCount;
+let gridCellSize = templateSize / boardCells;
 
-for (let i = 0; i < gridCellsCount; i++) {
-  const cellBoardRow = document.createElement("div");
-  cellBoardRow.setAttribute("style", "display: flex;");
-  cellBoardRow.style.height = `${gridCellSize}px`;
+function generateGrid(boardCells) {
+  wrapGridContainers.innerHTML = "";
+  gridCellSize = templateSize / boardCells;
 
-  for (let j = 0; j < gridCellsCount; j++) {
-    const gridCell = document.createElement("div");
-    gridCell.classList.add("grid-cell");
-    gridCell.style.width = `${gridCellSize}px`;
-    cellBoardRow.appendChild(gridCell);
+  for (let i = 0; i < boardCells; i++) {
+    const cellBoardRow = document.createElement("div");
+    cellBoardRow.setAttribute("style", "display: flex;");
+    cellBoardRow.style.height = `${gridCellSize}px`;
+
+    for (let j = 0; j < boardCells; j++) {
+      const gridCell = document.createElement("div");
+      gridCell.classList.add("grid-cell");
+      gridCell.style.width = `${gridCellSize}px`;
+      cellBoardRow.appendChild(gridCell);
+    }
+
+    wrapGridContainers.appendChild(cellBoardRow);
   }
-
-  wrapGridContainers.appendChild(cellBoardRow);
 }
 
-// End of generate grid cells
+generateGrid(boardCells);
+
+// End of generating initial grid cells panel
+
+// Add number of grid cells by user prompt input
+
+function createGrid() {
+  let gridCellsCount;
+  do {
+    gridCellsCount = prompt("The number of cells must be between 1 and 100!");
+
+    if (gridCellsCount === null) {
+      break;
+    }
+
+    gridCellsCount = +gridCellsCount;
+  } while (gridCellsCount < 1 || gridCellsCount > 100 || isNaN(gridCellsCount));
+  return gridCellsCount;
+}
+// End of add number of grid cells by user prompt input
+
+// Update the new grid with user input number of cells
+
+function updateGrid() {
+  const newBoardCells = createGrid();
+
+  if (newBoardCells !== null) {
+    boardCells = newBoardCells;
+    generateGrid(boardCells);
+  }
+}
+
+// End of update the new grid with user input number of cells
 
 // Add hover effect for the grid cells
 
@@ -37,22 +74,3 @@ wrapGridContainers.addEventListener("mouseover", (event) => {
 });
 
 //  End of add hover effect for the grid cells
-
-// Add number of grid cells by user prompt input
-
-const buttonGridSize = document.querySelector("#set-grid-size");
-
-let numberOfCells;
-
-buttonGridSize.addEventListener("click", (event) => {
-  do {
-    numberOfCells = prompt("The number of cells must be between 1 and 100!");
-
-    if (numberOfCells === null) {
-      break;
-    }
-
-    numberOfCells = +numberOfCells;
-    console.log(numberOfCells);
-  } while (numberOfCells < 1 || numberOfCells > 100 || isNaN(numberOfCells));
-});
